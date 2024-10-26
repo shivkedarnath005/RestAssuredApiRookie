@@ -1,0 +1,8 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <Multiply xmlns="http://tempuri.org/">
+            <intA>8</intA>
+            <intB>7</intB>
+        </Multiply>
+    </Body>
+</Envelope>
