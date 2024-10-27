@@ -1,0 +1,86 @@
+
+1. Log4j2 Logs Configuration -
+================================================================================
+
+-->Add/Create Logs Folder in the Project.
+
+-->Add/Create log4j2.xml or log4j2.properties file in src/main/resources.
+
+-->Add project lombok dependency in pom.xml.
+
+-->Add/Create Log Class in utility Package
+
+-->Add/Create MyLogs.log file in Logs folder & link its path in log4j2.xml.
+
+-->Add/Create log4j2.xml file load Configuration @BeforeSuite at BaseClass in loadConfig() method.
+   File file=new File("log4j2.xml");
+   LoggerContext context=(LoggerContext)LogManager.getContext(false);
+   context.setConfigLocation(file.toURI());
+
+-->Need to just Call in methods in testCase from Log class
+
+
+
+
+2. Extent Report Configuration & Screenshot Capture -
+================================================================================
+
+-->Add/Create extent-config.xml file for Extent Report format Configuration in project.
+
+-->Add/Create ExtentReportManager Class in utility Package-- to create the object 
+   of ExtentSparkReporter and load extent-config.xml  
+   
+-->Add/Create CaptureScreenShot() method in BaseClass & call this method in Listener class fail case.
+
+-->Add Listener Class in Utility package.
+
+-->Create ExtentReport Folder under test-output or separately.
+
+-->Configure ExtentReportManager.setExtent() in @BeforeSuite method in BaseClass
+
+-->Configure ExtentReportManager.endReport() in @AfterSuite method in BaseClass
+
+-->To call the listener Add the below listener (inside suite tag) 
+   setting in testng.xml
+
+<listeners>
+  <listener class-name="com.Project.util.ListenerClass"></listener>
+</listeners> 
+
+
+
+
+3. DataDriven Testing and DataProvider
+================================================================================
+
+-->Add/Create ExcelLibrary in utility package.
+
+-->Create a Folder TestData in src/test/resources and add TestData.xlxs in that.
+
+-->Create a package for DataProvider and add DataProviders class there 
+   and create the object of ExcelLibrary Class
+
+-->Add the DataProvider methods in DataProviders Class
+
+-->Call the DataProviders methods in the test cases Classes with @DataProvider Annotation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
