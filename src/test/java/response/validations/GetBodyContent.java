@@ -33,6 +33,7 @@ public class GetBodyContent
 			  .when()
 			  .get("https://api.example.com/users")
 			  .jsonPath().getList("id");
+	  
 			  int newId = 101;
 			  assertFalse(ids.contains(newId)); // Ensure newId is unique
   }
